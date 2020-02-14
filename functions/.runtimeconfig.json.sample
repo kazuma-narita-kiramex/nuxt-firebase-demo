@@ -1,0 +1,9 @@
+{
+  "auth": {
+    "domain": "exsample.com"
+  },
+  "microcms": {
+    "baseurl": "https://XXXXXXX.microcms.io/api/v1",
+    "apikey": "XXXXXXXXXXXXXXXXXXXXXX"
+  }
+}

@@ -1,0 +1,31 @@
+version: "3"
+services:
+  nuxt:
+    image: node:12
+    env_file: .env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./nuxt:/app/nuxt:cached
+      - ./scripts:/app/scripts:cached
+      - ./firebase.json:/app/firebase.json:ro
+      - ./.firebaserc:/app/.firebaserc:ro
+      - /app/nuxt/node_modules
+    tty: true
+    command: "sh /app/scripts/start_nuxt.sh"
+    working_dir: /app/nuxt
+  functions:
+    image: node:8
+    env_file: .env
+    ports:
+      - 5000:5000
+      - 9005:9005
+    volumes:
+      - ./functions:/app/functions:cached
+      - ./scripts:/app/scripts:cached
+      - ./firebase.json:/app/firebase.json:ro
+      - ./.firebaserc:/app/.firebaserc:ro
+      - /app/functions/node_modules
+    tty: true
+    #command: "sh scripts/start_functions.sh"
+    working_dir: /app/functions
