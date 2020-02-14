@@ -8,12 +8,12 @@ sampleファイルを用意しているので、それをもとに以下のフ�
 
 - .env
 - .firebaserc
-- .runtimeconfig.json
+- functions/.runtimeconfig.json
 
 .runtimeconfig.jsonはfirebaseに設定されているものから作る事もできる
 
 ```
-firebase functions:config:get > .runtimeconfig.json
+firebase functions:config:get > functions/.runtimeconfig.json
 ```
 
 # ローカル実行
